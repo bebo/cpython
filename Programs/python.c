@@ -7,7 +7,13 @@
 #include <fenv.h>
 #endif
 
+
 #ifdef MS_WINDOWS
+#include <windows.h>
+
+__declspec(dllexport) DWORD NvOptimusEnablement = 0x00000001;
+__declspec(dllexport) int AmdPowerXpressRequestHighPerformance = 1;
+
 int
 wmain(int argc, wchar_t **argv)
 {
